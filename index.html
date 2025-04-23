@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Al Ghozali Ramadhan - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -17,7 +17,9 @@
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#support">Support</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -45,52 +47,17 @@
         <section id="about">
             <div class="container">
                 <h2>About Me</h2>
-                <div class="about-content">
+                <div class="about-content" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
                     <div class="about-text">
-                        <p>I'm a full-stack developer and network security specialist based in Indonesia, with a passion for building secure, scalable applications and exploring cutting-edge AI technologies.</p>
-                        <p>I blend technical expertise with creative problem-solving, specializing in full-stack development, network security, and AI integration. Committed to writing clean, efficient code and implementing robust security measures in every project.</p>
-                        <div class="about-details">
-                            <div class="detail">
-                                <i class="fas fa-rocket"></i>
-                                <p>Currently exploring: DDoS and stress-testing tools (for educational and defensive research purposes), and computer connect one to each other</p>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-seedling"></i>
-                                <p>Learning: Network security, mitigation techniques, and DDoS attack methodologies</p>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-comment"></i>
-                                <p>Areas of expertise: Full-stack development, cybersecurity, AI integration</p>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-pen"></i>
-                                <p>When not coding: Writing technical articles and creative fiction</p>
-                            </div>
-                            <div class="detail">
-                                <i class="fas fa-globe"></i>
-                                <p>Languages: English, Indonesian (Native)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="code-snippet">
-                        <pre><code>
-class AlGhozali:
-    def __init__(self):
-        self.name = "Al Ghozali Ramadhan"
-        self.role = "Full-Stack Developer & Security Specialist"
-        self.location = "Indonesia"
-        self.languages = ["Python", "JavaScript", "TypeScript", 
-                         "PHP", "Go", "C", "C++"]
-        self.interests = ["Security Research", 
-                         "AI Development", 
-                         "Creative Writing"]
-
-    def say_hi(self):
-        print("Thanks for visiting my profile! Let's build something amazing together.")
-
-me = AlGhozali()
-me.say_hi()
-                        </code></pre>
+                        <p>
+                            Hi, I'm Al Ghozali Ramadhan, a passionate full-stack developer and network security enthusiast from Indonesia. I love building secure, scalable web applications and exploring the latest in AI technology. My journey in tech is driven by curiosity and a desire to create solutions that make a difference.
+                        </p>
+                        <p>
+                            With a strong foundation in both frontend and backend development, I enjoy tackling complex problems and learning new skills. I am especially interested in cybersecurity, cloud infrastructure, and integrating AI into real-world projects. When I'm not coding, you'll find me writing, reading, or collaborating with others in the tech community.
+                        </p>
+                        <p>
+                            Let's connect and create something amazing together!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -231,83 +198,113 @@ me.say_hi()
         <section id="projects">
             <div class="container">
                 <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <!-- Project cards will be dynamically generated with JavaScript -->
+                <div class="projects-carousel-wrapper" style="position:relative;">
+                    <button class="carousel-btn carousel-btn-left" aria-label="Previous Project" style="position:absolute;left:-40px;top:50%;transform:translateY(-50%);z-index:2;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--primary-color);">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="projects-grid projects-carousel" style="overflow:hidden;">
+                        <!-- Project cards will be dynamically generated with JavaScript -->
+                    </div>
+                    <button class="carousel-btn carousel-btn-right" aria-label="Next Project" style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);z-index:2;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--primary-color);">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </section>
 
-        <section id="github-stats">
+        <!-- Certifications Section -->
+        <section id="certifications">
             <div class="container">
-                <h2>GitHub Analytics</h2>
-                <div class="github-stats-container">
-                    <div class="github-stat">
-                        <h3>Top Languages</h3>
-                        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=awiones&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&layout=compact&border_radius=8" alt="Top Languages">
+                <h2>Certifications</h2>
+                <div class="projects-grid">
+                    <div class="project-card certification-card" style="flex-direction: column;">
+                        <div class="cert-image" style="width: 100%;">
+                            <img src="../assets/img/toefl-logo.png" alt="TOEFL ITP Logo" loading="lazy">
+                        </div>
+                        <div class="project-content" style="width: 100%;">
+                            <h3 class="project-title">TOEFL ITP</h3>
+                            <p class="project-description">Bahasa Inggris Net, Aug 2024</p>
+                            <p class="cert-short-desc">Overall Score: 557<br>
+                            Listening: 52 | Structure: 61 | Reading: 54</p>
+                            <div class="project-tags">
+                                <span class="project-tag">English Proficiency</span>
+                                <span class="project-tag">International Standard</span>
+                            </div>
+                            <div class="cert-details">
+                                <p class="cert-id">Certificate No: EI/24/01281</p>
+                                <p class="cert-validity">Valid until: Aug 2026</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="github-stat">
-                        <h3>GitHub Stats</h3>
-                        <img src="https://github-readme-stats.vercel.app/api?username=awiones&theme=github_dark&hide_border=true&include_all_commits=true&count_private=true&show_icons=true&border_radius=8" alt="GitHub Stats">
+                    <div class="project-card certification-card" style="flex-direction: column;">
+                        <div class="cert-image" style="width: 100%;">
+                            <img src="../assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
+                        </div>
+                        <div class="project-content" style="width: 100%;">
+                            <h3 class="project-title">Business Simulation Competition Runner-up</h3>
+                            <p class="project-description">PDAM Tirta Pakuan, August 2022</p>
+                            <p class="cert-short-desc">Second place achievement in Business Simulation Competition X PDAM Tirta Pakuan, demonstrating excellence in business strategy and decision-making.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Business Strategy</span>
+                                <span class="project-tag">Competition</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card certification-card" style="flex-direction: column;">
+                        <div class="cert-image" style="width: 100%;">
+                            <img src="../assets/img/great-learning.png" alt="Great Learning Logo" loading="lazy">
+                        </div>
+                        <div class="project-content" style="width: 100%;">
+                            <h3 class="project-title">Introduction to Ethical Hacking</h3>
+                            <p class="project-description">Great Learning Academy, August 2024</p>
+                            <p class="cert-short-desc">Comprehensive training in ethical hacking principles, security testing methodologies, and cybersecurity best practices.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Cybersecurity</span>
+                                <span class="project-tag">Ethical Hacking</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <h2>Let's Connect</h2>
-                <p>I'm always open to interesting conversations and collaboration opportunities:</p>
+                <h2>Contact Me</h2>
                 <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" class="contact-link" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                    </a>
-                    <a href="mailto:awiones@gmail.com" class="contact-link">
-                        <i class="fas fa-envelope"></i>
-                        <span>Email</span>
-                    </a>
-                    <a href="https://twitter.com/ojah77" class="contact-link" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                        <span>Twitter</span>
-                    </a>
-                    <a href="https://github.com/awiones" class="contact-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </a>
+                    <a class="contact-link" href="mailto:awiones@gmail.com"><i class="fas fa-envelope"></i> awiones@gmail.com</a>
+                    <a class="contact-link" href="https://t.me/awiones" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+                    <a class="contact-link" href="https://wa.me/62895362628580" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                 </div>
-                
-                <div class="contact-form">
-                    <h3>Send me a message</h3>
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button class="btn" type="submit">Send Message</button>
+                </form>
             </div>
         </section>
 
+        <!-- Support Section -->
         <section id="support">
             <div class="container">
                 <h2>Support My Work</h2>
                 <div class="support-links">
-                    <a href="https://ko-fi.com/awiones" class="support-link" target="_blank">
-                        <i class="fas fa-coffee"></i>
-                        <span>Support on Ko-fi</span>
+                    <a class="support-link" href="https://www.buymeacoffee.com/awiones" target="_blank">
+                        <i class="fas fa-coffee"></i> Buy Me a Coffee
                     </a>
-                    <a href="https://buymeacoffee.com/awiones" class="support-link" target="_blank">
-                        <i class="fas fa-mug-hot"></i>
-                        <span>Buy Me A Coffee</span>
+                    <a class="support-link" href="https://trakteer.id/awiones" target="_blank">
+                        <i class="fas fa-heart"></i> Trakteer
                     </a>
                 </div>
             </div>
@@ -320,30 +317,42 @@ me.say_hi()
                 <div class="footer-quote">
                     <p>"Building technology that matters, with security at its core."</p>
                 </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#expertise">Expertise</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/awiones" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/ojah77" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/oja_tp" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:awiones@gmail.com"><i class="fas fa-envelope"></i></a>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <div class="footer-links-column">
+                        <a href="#about">About</a>
+                        <a href="#expertise">Expertise</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                    </div>
+                    <div class="footer-links-column">
+                        <a href="#certifications">Certifications</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#support">Support</a>
+                    </div>
+                </nav>
+                <div class="footer-social" aria-label="Social links">
+                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/awiones" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/ojah77" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/oja_tp" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:awiones@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Al Ghozali Ramadhan. All rights reserved.</p>
+                <div>
+                    <p>&copy; <span id="footer-year">2023</span> Al Ghozali Ramadhan. All rights reserved.</p>
+                    <a href="#hero" class="back-to-top" aria-label="Back to top" style="margin-left:15px;color:#c9d1d9;text-decoration:underline;font-size:0.95em;">Back to Top &uarr;</a>
+                </div>
                 <p class="view-counter">
                     <img src="https://komarev.com/ghpvc/?username=awiones&style=flat-square&color=0366d6" alt="Profile Views" />
                 </p>
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script>
+      // Update footer year automatically
+      document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

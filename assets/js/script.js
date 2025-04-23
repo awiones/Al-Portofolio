@@ -32,6 +32,22 @@ const projects = [
     tags: ['Python', 'VPS Management', 'SSL Encryption', 'CLI'],
     liveLink: '#',
     codeLink: 'https://github.com/awiones/RemotelyPy'
+  },
+  {
+    title: 'Enchantment Overload',
+    description: 'Enchantment Overload adds a wide range of enchantments to Minecraft, making survival gameplay more exciting and efficient. Discover new ways to enhance your tools, weapons, and armor.',
+    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    tags: ['Minecraft', 'Java', 'Modding', 'Game Enhancement'],
+    liveLink: '#',
+    codeLink: 'https://github.com/awiones/Enchantment-Overload'
+  },
+  {
+    title: 'MercuriesOST',
+    description: 'A fast and efficient OSINT tool for gathering, analyzing, and visualizing open-source data. Built for researchers, investigators, and cybersecurity professionals. 🚀',
+    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    tags: ['OSINT', 'Cybersecurity', 'Data Analysis', 'Visualization'],
+    liveLink: '#',
+    codeLink: 'https://github.com/awiones/MercuriesOST'
   }
 ];
 
@@ -88,18 +104,25 @@ window.addEventListener('scroll', () => {
       link.querySelector('a').classList.add('active');
     }
   });
-  
-  // Add fade-in animation to elements when they come into view
-  const fadeElements = document.querySelectorAll('.fade-trigger');
-  fadeElements.forEach(element => {
-    const elementPosition = element.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
-    
-    if (elementPosition < screenPosition) {
-      element.classList.add('fade-in');
-    }
-  });
 });
+
+// Intersection Observer for fade-in animation
+function setupFadeInObserver() {
+  const fadeElements = document.querySelectorAll('.fade-trigger');
+  const observerOptions = {
+    threshold: 0.15
+  };
+  const fadeInObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  fadeElements.forEach(el => fadeInObserver.observe(el));
+}
 
 // Typing effect
 const phrases = [
@@ -153,19 +176,49 @@ window.addEventListener('load', () => {
   
   // Set up contact form
   setupContactForm();
+  
+  // Set up fade-in observer for smooth animation
+  setupFadeInObserver();
+  
+  // Set up carousel for featured projects
+  setupCarousel();
 });
 
-// Generate project cards
+// Carousel state
+let carouselIndex = 0;
+
 function generateProjects() {
-  const projectsGrid = document.querySelector('.projects-grid');
+  const projectsGrid = document.querySelector('.projects-carousel');
+  if (!projectsGrid) return;
+
+  projectsGrid.innerHTML = '';
+  const total = projects.length;
   
-  projects.forEach(project => {
+  // Show 3 projects with the center one being the active one
+  const indices = [
+    (carouselIndex - 1 + total) % total,
+    carouselIndex % total,
+    (carouselIndex + 1) % total
+  ];
+
+  indices.forEach((idx, i) => {
+    const project = projects[idx];
     const projectCard = document.createElement('div');
-    projectCard.className = 'project-card fade-trigger';
+    projectCard.className = 'project-card fade-trigger carousel-card';
     
+    if (i === 1) {
+      projectCard.classList.add('carousel-card-center');
+      projectCard.style.cursor = 'pointer';
+    } else {
+      projectCard.classList.add('carousel-card-side');
+      projectCard.style.pointerEvents = 'none';
+      projectCard.style.opacity = '0.7';
+      projectCard.style.transform = 'scale(0.92)';
+    }
+
     projectCard.innerHTML = `
       <div class="project-image">
-        <img src="${project.image}" alt="${project.title}">
+        <img src="${project.image}" alt="${project.title}" loading="eager">
       </div>
       <div class="project-content">
         <h3 class="project-title">${project.title}</h3>
@@ -174,18 +227,90 @@ function generateProjects() {
           ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
         </div>
         <div class="project-links">
-          <a href="${project.liveLink}" class="project-link" target="_blank">
+          <a href="${project.liveLink}" class="project-link" target="_blank" ${i !== 1 ? 'tabindex="-1"' : ''}>
             <i class="fas fa-external-link-alt"></i> Live Demo
           </a>
-          <a href="${project.codeLink}" class="project-link" target="_blank">
+          <a href="${project.codeLink}" class="project-link" target="_blank" ${i !== 1 ? 'tabindex="-1"' : ''}>
             <i class="fab fa-github"></i> View Code
           </a>
         </div>
       </div>
     `;
-    
+
+    if (i === 1) {
+      projectCard.addEventListener('click', () => {
+        window.open(project.codeLink, '_blank');
+      });
+    }
+
     projectsGrid.appendChild(projectCard);
   });
+
+  setupFadeInObserver();
+}
+
+function setupCarousel() {
+  const leftBtn = document.querySelector('.carousel-btn-left');
+  const rightBtn = document.querySelector('.carousel-btn-right');
+
+  if (!leftBtn || !rightBtn) return;
+
+  // Preload all project images to prevent loading delays during animation
+  projects.forEach(project => {
+    const img = new Image();
+    img.src = project.image;
+  });
+
+  leftBtn.addEventListener('click', () => {
+    smoothSlide(-1);
+  });
+
+  rightBtn.addEventListener('click', () => {
+    smoothSlide(1);
+  });
+  
+  // Add keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      smoothSlide(-1);
+    } else if (e.key === 'ArrowRight') {
+      smoothSlide(1);
+    }
+  });
+  
+  // Add touch swipe support
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
+  const carousel = document.querySelector('.projects-container');
+  if (carousel) {
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+  }
+  
+  function handleSwipe() {
+    const threshold = 50; // minimum distance for swipe
+    if (touchEndX < touchStartX - threshold) {
+      // Swipe left -> next slide
+      smoothSlide(1);
+    } else if (touchEndX > touchStartX + threshold) {
+      // Swipe right -> previous slide
+      smoothSlide(-1);
+    }
+  }
+}
+
+// Simple smoothSlide: just update index and re-render, no animation
+function smoothSlide(direction) {
+  const total = projects.length;
+  carouselIndex = (carouselIndex + direction + total) % total;
+  generateProjects();
 }
 
 // Contact form handling
