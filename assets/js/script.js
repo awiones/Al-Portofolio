@@ -324,9 +324,11 @@ function setupContactForm() {
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
       
-      // Here you would typically send the form data to a server
-      // For now, we'll just log it and show a success message
-      console.log('Form submitted:', { name, email, message });
+      // Create mailto link with form data
+      const mailtoLink = `mailto:awiones@gmail.com?subject=Portfolio Contact from ${name}&body=From: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
       
       // Show success message
       const formGroups = document.querySelectorAll('.form-group');
