@@ -12,42 +12,26 @@ const projects = [
   {
     title: 'NEScan',
     description: 'A fast and reliable network scanning tool for identifying devices, open ports, and potential vulnerabilities.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1334&q=80',
+    image: 'https://github.com/awiones/NEScan/blob/main/assets/img/logo1.jpg?raw=true',
     tags: ['Python', 'Network Security', 'Port Scanning', 'Vulnerability Detection'],
-    liveLink: '#',
+    liveLink: '',
     codeLink: 'https://github.com/awiones/NEScan'
   },
   {
     title: 'TentroLink',
     description: 'Network stress testing and security assessment toolkit for authorized penetration testing. Evaluate infrastructure resilience with customizable multi-protocol testing capabilities and comprehensive analytics.',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
+    image: 'https://github.com/awiones/TentroLink/blob/main/assets/images/_Qbi9yCfTcG023xENbqkmA.jpg?raw=true',
     tags: ['Security Testing', 'Network Analysis', 'Penetration Testing', 'Analytics'],
-    liveLink: '#',
+    liveLink: '',
     codeLink: 'https://github.com/awiones/TentroLink'
   },
   {
     title: 'RemotelyPy',
     description: 'A secure Python-based remote management system for controlling multiple VPS instances through a central controller with SSL encryption and interactive CLI.',
-    image: 'https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1080&q=80',
+    image: 'https://github.com/awiones/RemotelyPy/blob/main/logo.jpeg?raw=true',
     tags: ['Python', 'VPS Management', 'SSL Encryption', 'CLI'],
-    liveLink: '#',
+    liveLink: '',
     codeLink: 'https://github.com/awiones/RemotelyPy'
-  },
-  {
-    title: 'Enchantment Overload',
-    description: 'Enchantment Overload adds a wide range of enchantments to Minecraft, making survival gameplay more exciting and efficient. Discover new ways to enhance your tools, weapons, and armor.',
-    image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['Minecraft', 'Java', 'Modding', 'Game Enhancement'],
-    liveLink: '#',
-    codeLink: 'https://github.com/awiones/Enchantment-Overload'
-  },
-  {
-    title: 'MercuriesOST',
-    description: 'A fast and efficient OSINT tool for gathering, analyzing, and visualizing open-source data. Built for researchers, investigators, and cybersecurity professionals. 🚀',
-    image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-    tags: ['OSINT', 'Cybersecurity', 'Data Analysis', 'Visualization'],
-    liveLink: '#',
-    codeLink: 'https://github.com/awiones/MercuriesOST'
   }
 ];
 
@@ -227,9 +211,13 @@ function generateProjects() {
           ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
         </div>
         <div class="project-links">
-          <a href="${project.liveLink}" class="project-link" target="_blank" ${i !== 1 ? 'tabindex="-1"' : ''}>
-            <i class="fas fa-external-link-alt"></i> Live Demo
-          </a>
+          ${
+            project.title.startsWith('Rasi Teller')
+              ? `<a href="${project.liveLink}" class="project-link" target="_blank" ${i !== 1 ? 'tabindex="-1"' : ''}>
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>`
+              : ''
+          }
           <a href="${project.codeLink}" class="project-link" target="_blank" ${i !== 1 ? 'tabindex="-1"' : ''}>
             <i class="fab fa-github"></i> View Code
           </a>
@@ -376,4 +364,47 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       });
     }
   });
+});
+
+// Skills Animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to check if an element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // Function to animate skill bars when they come into view
+    function animateSkillBars() {
+        const skillItems = document.querySelectorAll('.skill-item');
+        
+        skillItems.forEach(item => {
+            if (isInViewport(item) && !item.classList.contains('animate')) {
+                item.classList.add('animate');
+                
+                // Get the skill level percentage and apply it to the progress bar
+                const skillLevel = item.querySelector('.skill-level').textContent;
+                const progressBar = item.querySelector('.skill-progress-bar');
+                
+                // Set the width after a small delay to ensure the animation works
+                setTimeout(() => {
+                    progressBar.style.width = skillLevel;
+                }, 100);
+            }
+        });
+    }
+
+    // Initial check for visible skill bars
+    animateSkillBars();
+
+    // Check for new skill bars coming into view on scroll
+    window.addEventListener('scroll', animateSkillBars);
+    
+    // Also check on resize
+    window.addEventListener('resize', animateSkillBars);
 });
