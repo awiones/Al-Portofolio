@@ -3,656 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Al Ghozali Ramadhan - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Al Ghozali Ramadhan | Portfolio</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+    <script src="/assets/js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">AG</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">All Projects</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo"></div>
+                <div class="name">Al Ghozali Ramadhan</div>
+                <div class="title">Self-Taught Programmer</div>
             </div>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>Al Ghozali Ramadhan</h1>
-                <div id="typing-text">Full-Stack Developer</div>
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/awiones" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/ojah77" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/oja_tp" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:awiones@gmail.com"><i class="fas fa-envelope"></i></a>
+            
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-label">Age</span>
+                    <span class="info-value">18</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Indonesia</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">awiones@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">LinkedIn</span>
+                    <span class="info-value">
+                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">GitHub</span>
+                    <span class="info-value">
+                        <a href="https://github.com/awiones" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Awiones</a>
+                    </span>
                 </div>
             </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <div class="about-content" style="display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
-                    <div class="about-text">
-                        <p>
-                            Hi, I'm Al Ghozali Ramadhan, a passionate full-stack developer and network security enthusiast from Indonesia. I love building secure, scalable web applications and exploring the latest in AI technology. My journey in tech is driven by curiosity and a desire to create solutions that make a difference.
-                        </p>
-                        <p>
-                            With a strong foundation in both frontend and backend development, I enjoy tackling complex problems and learning new skills. I am especially interested in cybersecurity, cloud infrastructure, and integrating AI into real-world projects. When I'm not coding, you'll find me writing, reading, or collaborating with others in the tech community.
-                        </p>
-                        <p>
-                            Let's connect and create something amazing together!
-                        </p>
-                    </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1>Portfolio</h1>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    I'm Al Ghozali Ramadhan, a passionate and versatile creator from Indonesia. My journey spans programming, marshalling, and creative writing. Whether building scalable web applications, leading teams and events, or crafting compelling stories, I thrive on learning and making an impact across disciplines. I believe in blending technology, organization, and creativity to deliver meaningful results and inspire others in every field I explore.
                 </div>
             </div>
-        </section>
-
-        <section id="expertise">
-            <div class="container">
-                <h2>Professional Focus Areas</h2>
-                <div class="expertise-container">
-                    <!-- Core Expertise Card -->
-                    <div class="expertise-core">
-                        <div class="expertise-icon">
-                            <i class="fas fa-code-branch"></i>
-                        </div>
-                        <h3>Core Expertise</h3>
-                        <p>Specialized in creating secure, scalable applications with modern technologies</p>
-                    </div>
-                    
-                    <!-- Expertise Cards -->
-                    <div class="expertise-cards">
-                        <!-- Full-Stack Development -->
-                        <div class="expertise-card">
-                            <div class="expertise-card-header">
-                                <div class="expertise-card-icon">
-                                    <i class="fas fa-layer-group"></i>
-                                </div>
-                                <h3>Full-Stack Development</h3>
-                            </div>
-                            <div class="expertise-card-body">
-                                <ul class="expertise-list">
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-laptop-code"></i></span>
-                                        <span>Frontend Technologies</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-server"></i></span>
-                                        <span>Backend Systems</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-database"></i></span>
-                                        <span>Databases</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- Network Security -->
-                        <div class="expertise-card">
-                            <div class="expertise-card-header">
-                                <div class="expertise-card-icon">
-                                    <i class="fas fa-shield-alt"></i>
-                                </div>
-                                <h3>Network Security</h3>
-                            </div>
-                            <div class="expertise-card-body">
-                                <ul class="expertise-list">
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-user-secret"></i></span>
-                                        <span>Penetration Testing</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-search"></i></span>
-                                        <span>Threat Analysis</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-lock"></i></span>
-                                        <span>Secure Coding</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- DevOps -->
-                        <div class="expertise-card">
-                            <div class="expertise-card-header">
-                                <div class="expertise-card-icon">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <h3>DevOps</h3>
-                            </div>
-                            <div class="expertise-card-body">
-                                <ul class="expertise-list">
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-sync-alt"></i></span>
-                                        <span>CI/CD Pipelines</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-cloud"></i></span>
-                                        <span>Cloud Architecture</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <!-- AI Integration -->
-                        <div class="expertise-card">
-                            <div class="expertise-card-header">
-                                <div class="expertise-card-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
-                                <h3>AI Integration</h3>
-                            </div>
-                            <div class="expertise-card-body">
-                                <ul class="expertise-list">
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-robot"></i></span>
-                                        <span>Machine Learning</span>
-                                    </li>
-                                    <li>
-                                        <span class="expertise-list-icon"><i class="fas fa-comment-dots"></i></span>
-                                        <span>NLP Solutions</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <h2>Technical Expertise</h2>
-                
-                <div class="skills-container">
+            
+            <div class="section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
                     <div class="skill-category">
-                        <h3>Languages & Frameworks</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">JavaScript</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">TypeScript</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Python</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">PHP</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Go</span>
-                                    <span class="skill-level">70%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">C++</span>
-                                    <span class="skill-level">65%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Java</span>
-                                    <span class="skill-level">60%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 60%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">C#</span>
-                                    <span class="skill-level">55%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 55%"></div>
-                                </div>
+                        <h3><i class="fa-solid fa-code"></i> Programming</h3>
+                        <ul class="skill-list">
+                            <li>JavaScript, TypeScript, Python, Go, PHP</li>
+                            <li>React, Vue.js, Next.js, Node.js</li>
+                            <li>Database: PostgreSQL, MongoDB, MySQL</li>
+                            <li>API Design & Integration</li>
+                            <li>Problem Solving & Algorithms</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-people-group"></i> Marshalling</h3>
+                        <ul class="skill-list">
+                            <li>Team Coordination & Leadership</li>
+                            <li>Event Planning & Management</li>
+                            <li>Conflict Resolution</li>
+                            <li>Public Speaking & Communication</li>
+                            <li>Time Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-pen-nib"></i> Content Writer</h3>
+                        <ul class="skill-list">
+                            <li>Creative Writing & Storytelling</li>
+                            <li>Editing & Proofreading</li>
+                            <li>Content Planning</li>
+                            <li>Research & Fact-Checking</li>
+                            <li>SEO Writing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Technical Skills</h3>
+                        <ul class="skill-list">
+                            <li><strong>Microsoft Office Suite:</strong> Word, Excel, PowerPoint</li>
+                            <li><strong>Google Apps:</strong> Docs, Sheets, Sites</li>
+                            <li><strong>Editing:</strong> Capcut</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Experience</h2>
+                <div class="experience-timeline">
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <div class="job-title">Exclusive Content Writer</div>
+                            <div class="company">Tencent Holdings Ltd's, China Literature Ltd.</div>
+                            <div class="duration">May 2024 – Present</div>
+                        </div>
+                        <div class="job-description">
+                            Authored serialized fiction content under exclusive contract, meeting all editorial deadlines and content quality standards.<br>
+                            Maintained consistent reader engagement across episodes, contributing to a 20% increase in platform satisfaction ratings.<br>
+                            Adapted storylines based on editorial feedback and audience metrics, improving chapter retention by 15%.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Featured Projects</h2>
+                    <a href="projects.html" class="btn" style="display:inline-block; min-width:140px; padding:10px 28px; background:linear-gradient(135deg,#232323,#181818); color:#fff; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px #0002; transition:background 0.2s; font-size:1rem; margin-left:1.5rem;">See other</a>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <a href="https://github.com/awiones/Liam-Ai" target="_blank" rel="noopener" style="display:block;">
+                            <div class="project-image" style="background: url('https://github.com/awiones/Liam-Ai/blob/main/images/logo.png?raw=true') center center / cover no-repeat; height: 200px; width: 100%;"></div>
+                        </a>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                Liam AI
+                            </h3>
+                            <p class="project-description">
+                                Liam AI is a Python-based voice assistant that enables users to control their Windows computer using natural language voice commands.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">OpenAI</span>
+                                <span class="tech-tag">ElevenLabs</span>
+                                <span class="tech-tag">AI Vision</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="skill-category">
-                        <h3>Frontend Development</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">React</span>
-                                    <span class="skill-level">95%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Vue.js</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Tailwind</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Svelte</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Angular</span>
-                                    <span class="skill-level">70%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Next.js</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
+                    <div class="project-card">
+                        <a href="https://github.com/awiones/TentroLink" target="_blank" rel="noopener" style="display:block;">
+                            <div class="project-image" style="background: url('https://github.com/awiones/TentroLink/blob/main/assets/images/_Qbi9yCfTcG023xENbqkmA.jpg?raw=true') center center / cover no-repeat; height: 200px; width: 100%;"></div>
+                        </a>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                TentroLink
+                            </h3>
+                            <p class="project-description">
+                                TentroLink: Network stress testing for authorized penetration testing.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Network Testing</span>
+                                <span class="tech-tag">Penetration Testing</span>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="skill-category">
-                        <h3>Backend & Database</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Node.js</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Django</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Laravel</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">GraphQL</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Spring</span>
-                                    <span class="skill-level">65%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 65%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Flask</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">FastAPI</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">MongoDB</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">MySQL</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">SQLite</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h3>DevOps & Security</h3>
-                        <div class="skills-grid">
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Docker</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">AWS</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">GitHub Actions</span>
-                                    <span class="skill-level">90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Google Cloud</span>
-                                    <span class="skill-level">75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Azure</span>
-                                    <span class="skill-level">70%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 70%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Nginx</span>
-                                    <span class="skill-level">85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-info">
-                                    <span class="skill-name">Apache</span>
-                                    <span class="skill-level">80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
+                    <div class="project-card">
+                        <a href="https://webnovel.com/book/god-of-grinding_29416615208116505" target="_blank" rel="noopener" style="display:block;">
+                            <div class="project-image" style="background: url('/assets/img/novel-icon.png') center center / cover no-repeat; height: 200px; width: 100%;"></div>
+                        </a>
+                        <div class="project-content">
+                            <h3 class="project-title">
+                                God of Grinding (Webnovel)
+                            </h3>
+                            <p class="project-description">
+                                Original novel published on Webnovel. Follow the journey of the protagonist in a world of endless grinding and growth.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Webnovel</span>
+                                <span class="tech-tag">Fiction</span>
+                                <span class="tech-tag">Creative Writing</span>
+                                <span class="tech-tag">Serialization</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-carousel-wrapper" style="position:relative;">
-                    <button class="carousel-btn carousel-btn-left" aria-label="Previous Project" style="position:absolute;left:-40px;top:50%;transform:translateY(-50%);z-index:2;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--primary-color);">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <div class="projects-grid projects-carousel" style="overflow:hidden;">
-                        <!-- Project cards will be dynamically generated with JavaScript -->
-                    </div>
-                    <button class="carousel-btn carousel-btn-right" aria-label="Next Project" style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);z-index:2;background:none;border:none;font-size:2rem;cursor:pointer;color:var(--primary-color);">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
+            <!-- Certifications Section -->
+            <div class="section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                    <h2 class="section-title" style="margin-bottom: 0;">Certifications</h2>
+                    <a href="certifications.html" class="btn" style="display:inline-block; min-width:140px; padding:10px 28px; background:linear-gradient(135deg,#232323,#181818); color:#fff; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px #0002; transition:background 0.2s; font-size:1rem; margin-left:1.5rem;">View All</a>
                 </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="projects.html" class="btn" style="display:inline-block; min-width:140px;">View All</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <div class="container">
-                <h2>Certifications</h2>
                 <div class="projects-grid">
                     <div class="project-card certification-card" style="flex-direction: column;">
                         <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/toefl-logo.png" alt="Enchantment Overload" loading="lazy">
+                            <img src="/assets/img/toefl-logo.png" alt="TOEFL ITP" loading="lazy">
                         </div>
                         <div class="project-content" style="width: 100%;">
                             <h3 class="project-title">TOEFL ITP</h3>
                             <p class="project-description">Bahasa Inggris Net, Aug 2024</p>
                             <p class="cert-short-desc">Overall Score: 557<br>
                             Listening: 52 | Structure: 61 | Reading: 54</p>
-                            <div class="project-tags">
-                                <span class="project-tag">English Proficiency</span>
-                                <span class="project-tag">International Standard</span>
-                            </div>
-                            <div class="cert-details">
-                                <p class="cert-id">Certificate No: EI/24/01281</p>
-                                <p class="cert-validity">Valid until: Aug 2026</p>
-                            </div>
                         </div>
                     </div>
                     <div class="project-card certification-card" style="flex-direction: column;">
                         <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
+                            <img src="/assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
                         </div>
                         <div class="project-content" style="width: 100%;">
                             <h3 class="project-title">Business Simulation Competition Runner-up</h3>
                             <p class="project-description">PDAM Tirta Pakuan, August 2022</p>
                             <p class="cert-short-desc">Second place achievement in Business Simulation Competition X PDAM Tirta Pakuan, demonstrating excellence in business strategy and decision-making.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Business Strategy</span>
-                                <span class="project-tag">Competition</span>
-                            </div>
                         </div>
                     </div>
                     <div class="project-card certification-card" style="flex-direction: column;">
                         <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/great-learning.png" alt="Great Learning Logo" loading="lazy">
+                            <img src="/assets/img/great-learning.png" alt="Great Learning Logo" loading="lazy">
                         </div>
                         <div class="project-content" style="width: 100%;">
                             <h3 class="project-title">Introduction to Ethical Hacking</h3>
                             <p class="project-description">Great Learning Academy, August 2024</p>
                             <p class="cert-short-desc">Comprehensive training in ethical hacking principles, security testing methodologies, and cybersecurity best practices.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Cybersecurity</span>
-                                <span class="project-tag">Ethical Hacking</span>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="certifications.html" class="btn" style="display:inline-block; min-width:140px;">View All</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <div class="contact-links">
-                    <a class="contact-link" href="mailto:awiones@gmail.com"><i class="fas fa-envelope"></i> awiones@gmail.com</a>
-                    <!-- WhatsApp contact removed - number is just a dump -->
-                </div>
-                <form id="contact-form" class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button class="btn" type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- Support Section -->
-        <section id="support">
-            <div class="container">
-                <h2>Support My Work</h2>
-                <div class="support-links">
-                    <a class="support-link" href="https://www.buymeacoffee.com/awiones" target="_blank">
-                        <i class="fas fa-coffee"></i> Buy Me a Coffee
-                    </a>
-                    <a class="support-link" href="https://trakteer.id/awiones" target="_blank">
-                        <i class="fas fa-heart"></i> Trakteer
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-quote">
-                    <p>"Building technology that matters, with security at its core."</p>
-                </div>
-                <nav class="footer-links" aria-label="Footer navigation">
-                    <div class="footer-links-column">
-                        <a href="#about">About</a>
-                        <a href="#expertise">Expertise</a>
-                        <a href="#skills">Skills</a>
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="#projects">Projects</a>
-                        <a href="projects.html" style="font-weight:bold;">All Projects</a>
-                        <a href="#certifications">Certifications</a>
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="#contact">Contact</a>
-                        <a href="#support">Support</a>
-                        <a href="certifications.html">Certification</a>
-                    </div>
-                </nav>
-                <div class="footer-social" aria-label="Social links">
-                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/awiones" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/ojah77" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/oja_tp" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:awiones@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div>
-                    <p>&copy; <span id="footer-year">2023</span> Al Ghozali Ramadhan. All rights reserved.</p>
-                    <a href="#hero" class="back-to-top" aria-label="Back to top" style="margin-left:15px;color:#c9d1d9;text-decoration:underline;font-size:0.95em;">Back to Top &uarr;</a>
-                </div>
-                <p class="view-counter">
-                    <img src="https://komarev.com/ghpvc/?username=awiones&style=flat-square&color=0366d6" alt="Profile Views" />
-                </p>
             </div>
         </div>
-    </footer>
-    
-    <script>
-      // Update footer year automatically
-      document.getElementById('footer-year').textContent = new Date().getFullYear();
-    </script>
-    <script src="assets/js/script.js"></script>
+    </div>
 </body>
 </html>

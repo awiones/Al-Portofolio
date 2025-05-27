@@ -7,127 +7,354 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0; top: 0; width: 100vw; height: 100vh;
+            background: rgba(20,20,20,0.92);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .cert-modal.show {
+            display: flex;
+        }
+        .cert-modal-content {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 18px;
+            box-shadow: 0 8px 40px #000a;
+            background: #232323;
+            object-fit: contain;
+            margin-bottom: 18px;
+            transition: transform 0.18s cubic-bezier(.4,2,.6,1);
+        }
+        .cert-modal-close {
+            color: #fff;
+            position: absolute;
+            top: 32px;
+            right: 48px;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            text-shadow: 0 2px 8px #000a;
+            transition: color 0.2s;
+            background:rgba(30,30,30,0.7);
+            border-radius:50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cert-modal-close:hover {
+            color: #ff5252;
+            background:rgba(30,30,30,0.95);
+        }
+        @media (max-width: 600px) {
+            .cert-modal-content {
+                max-width: 98vw;
+                max-height: 60vh;
+            }
+            .cert-modal-close {
+                top: 12px;
+                right: 18px;
+                font-size: 2.2rem;
+                width: 36px;
+                height: 36px;
+            }
+        }
+        .enhanced-header {
+            text-align:center;
+            padding:60px 20px 40px 20px;
+            background:linear-gradient(135deg,rgba(10,10,10,0.8) 0%,rgba(26,26,26,0.6) 50%,rgba(20,20,20,0.8) 100%);
+            border-radius:24px;
+            margin-bottom:40px;
+            border:1px solid rgba(255,255,255,0.05);
+            backdrop-filter:blur(10px);
+            box-shadow:0 4px 32px rgba(30,30,30,0.12);
+        }
+        .certifications-title {
+            font-size:3.5rem;
+            font-weight:800;
+            margin-bottom:16px;
+            background:linear-gradient(135deg,#ffffff 0%,#cccccc 25%,#aaaaaa 50%,#888888 75%,#666666 100%);
+            -webkit-background-clip:text;
+            background-clip:text;
+            -webkit-text-fill-color:transparent;
+            text-shadow:0 4px 12px rgba(255,255,255,0.1);
+        }
+        .certifications-subtitle {
+            font-size:1.25rem;
+            color:#888888;
+            max-width:600px;
+            margin:0 auto;
+            line-height:1.6;
+        }
+        .cert-image.clickable-cert {
+            cursor: zoom-in;
+            transition: box-shadow 0.2s, transform 0.2s;
+            border-radius: 20px 20px 0 0;
+        }
+        .cert-image.clickable-cert:hover {
+            box-shadow: 0 8px 32px #0006;
+            transform: scale(1.03);
+        }
+        .cert-modal {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s;
+        }
+        .cert-modal.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .cert-modal-content {
+            transition: transform 0.18s cubic-bezier(.4,2,.6,1);
+        }
+        .cert-modal-close {
+            color: #fff;
+            position: absolute;
+            top: 32px;
+            right: 48px;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            text-shadow: 0 2px 8px #000a;
+            transition: color 0.2s;
+            background:rgba(30,30,30,0.7);
+            border-radius:50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cert-modal-close:hover {
+            color: #ff5252;
+            background:rgba(30,30,30,0.95);
+        }
+        .enhanced-btn {
+            display:inline-block;
+            min-width:140px;
+            padding:12px 32px;
+            background:linear-gradient(135deg,#232323,#181818);
+            color:#fff;
+            border-radius:10px;
+            font-weight:700;
+            text-decoration:none;
+            box-shadow:0 2px 12px #0003;
+            transition:background 0.2s, box-shadow 0.2s, transform 0.2s;
+            font-size:1.1rem;
+            border: none;
+        }
+        .enhanced-btn:hover {
+            background:linear-gradient(135deg,#181818,#232323);
+            color:#fff;
+            box-shadow:0 6px 24px #0005;
+            transform: translateY(-2px) scale(1.04);
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+            margin-left: 320px; /* offset for fixed sidebar */
+        }
+        .sidebar {
+            width: 320px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #141414 100%);
+            color: #fff;
+            padding: 40px 24px;
+            box-shadow: 2px 0 24px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 0 32px 32px 0;
+            z-index: 100;
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        @media (max-width: 900px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                border-radius: 0 0 32px 32px;
+                box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+                flex-direction: row;
+                justify-content: center;
+                padding: 24px 8px;
+            }
+            .container {
+                margin-left: 0;
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 600px) {
+            .cert-modal-content {
+                max-width: 98vw;
+                max-height: 60vh;
+            }
+            .cert-modal-close {
+                top: 12px;
+                right: 18px;
+                font-size: 2.2rem;
+                width: 36px;
+                height: 36px;
+            }
+            .certifications-title {
+                font-size:2.1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">AG</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">All Projects</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <div class="profile-photo"></div>
+                <div class="name">Al Ghozali Ramadhan</div>
+                <div class="title">Self-Taught Programmer</div>
             </div>
-        </nav>
-    </header>
-    <main>
-        <section id="certifications">
-            <div class="container">
-                <h2>Certifications</h2>
-                <div class="projects-grid">
-                    <div class="project-card certification-card" style="flex-direction: column;">
-                        <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/toefl-logo.png" alt="TOEFL ITP" loading="lazy">
-                        </div>
-                        <div class="project-content" style="width: 100%;">
-                            <h3 class="project-title">TOEFL ITP</h3>
-                            <p class="project-description">Bahasa Inggris Net, Aug 2024</p>
-                            <p class="cert-short-desc">Overall Score: 557<br>
-                            Listening: 52 | Structure: 61 | Reading: 54</p>
-                            <div class="project-tags">
-                                <span class="project-tag">English Proficiency</span>
-                                <span class="project-tag">International Standard</span>
-                            </div>
-                            <div class="cert-details">
-                                <p class="cert-id">Certificate No: EI/24/01281</p>
-                                <p class="cert-validity">Valid until: Aug 2026</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card certification-card" style="flex-direction: column;">
-                        <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
-                        </div>
-                        <div class="project-content" style="width: 100%;">
-                            <h3 class="project-title">Business Simulation Competition Runner-up</h3>
-                            <p class="project-description">PDAM Tirta Pakuan, August 2022</p>
-                            <p class="cert-short-desc">Second place achievement in Business Simulation Competition X PDAM Tirta Pakuan, demonstrating excellence in business strategy and decision-making.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Business Strategy</span>
-                                <span class="project-tag">Competition</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card certification-card" style="flex-direction: column;">
-                        <div class="cert-image" style="width: 100%;">
-                            <img src="assets/img/great-learning.png" alt="Great Learning Logo" loading="lazy">
-                        </div>
-                        <div class="project-content" style="width: 100%;">
-                            <h3 class="project-title">Introduction to Ethical Hacking</h3>
-                            <p class="project-description">Great Learning Academy, August 2024</p>
-                            <p class="cert-short-desc">Comprehensive training in ethical hacking principles, security testing methodologies, and cybersecurity best practices.</p>
-                            <div class="project-tags">
-                                <span class="project-tag">Cybersecurity</span>
-                                <span class="project-tag">Ethical Hacking</span>
-                            </div>
-                        </div>
-                    </div>
+            <div class="info-section">
+                <div class="info-item">
+                    <span class="info-label">Age</span>
+                    <span class="info-value">18</span>
                 </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="index.html#certifications" class="btn" style="display:inline-block; min-width:140px;">Back to Portfolio</a>
+                <div class="info-item">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Indonesia</span>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-quote">
-                    <p>"Building technology that matters, with security at its core."</p>
+                <div class="info-item">
+                    <span class="info-label">Email</span>
+                    <span class="info-value">awiones@gmail.com</span>
                 </div>
-                <nav class="footer-links" aria-label="Footer navigation">
-                    <div class="footer-links-column">
-                        <a href="#about">About</a>
-                        <a href="#expertise">Expertise</a>
-                        <a href="#skills">Skills</a>
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="#projects">Projects</a>
-                        <a href="projects.html" style="font-weight:bold;">All Projects</a>
-                        <a href="#certifications">Certifications</a>
-                    </div>
-                    <div class="footer-links-column">
-                        <a href="#contact">Contact</a>
-                        <a href="#support">Support</a>
-                        <a href="certifications.html">Certification</a>
-                    </div>
-                </nav>
-                <div class="footer-social" aria-label="Social links">
-                    <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/awiones" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/ojah77" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/oja_tp" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="mailto:awiones@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <div class="info-item">
+                    <span class="info-label">LinkedIn</span>
+                    <span class="info-value">
+                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
+                    </span>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <div>
-                    <p>&copy; <span id="footer-year">2023</span> Al Ghozali Ramadhan. All rights reserved.</p>
-                    <a href="#hero" class="back-to-top" aria-label="Back to top" style="margin-left:15px;color:#c9d1d9;text-decoration:underline;font-size:0.95em;">Back to Top &uarr;</a>
+                <div class="info-item">
+                    <span class="info-label">GitHub</span>
+                    <span class="info-value">
+                        <a href="https://github.com/awiones" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Awiones</a>
+                    </span>
                 </div>
-                <p class="view-counter">
-                    <img src="https://komarev.com/ghpvc/?username=awiones&style=flat-square&color=0366d6" alt="Profile Views" />
-                </p>
             </div>
         </div>
-    </footer>
+        <main>
+            <section id="certifications">
+                <div class="section">
+                    <div class="projects-header enhanced-header">
+                        <h1 class="certifications-title">Certifications</h1>
+                        <p class="certifications-subtitle">Explore my collection of certifications, highlighting achievements and expertise across various fields and disciplines.</p>
+                    </div>
+                    <div class="projects-grid" style="margin-bottom:0;">
+                        <div class="project-card certification-card">
+                            <div class="cert-image clickable-cert" data-img="assets/img/toefl-logo.png">
+                                <img src="assets/img/toefl-logo.png" alt="TOEFL ITP" loading="lazy">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">TOEFL ITP</h3>
+                                <p class="project-description">Bahasa Inggris Net, Aug 2024</p>
+                                <p class="cert-short-desc">Overall Score: 557<br>
+                                Listening: 52 | Structure: 61 | Reading: 54</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">English Proficiency</span>
+                                    <span class="project-tag">International Standard</span>
+                                </div>
+                                <div class="cert-details">
+                                    <p class="cert-id">Certificate No: EI/24/01281</p>
+                                    <p class="cert-validity">Valid until: Aug 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card certification-card">
+                            <div class="cert-image clickable-cert" data-img="assets/img/business-sim-logo.png">
+                                <img src="assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Business Simulation Competition Runner-up</h3>
+                                <p class="project-description">PDAM Tirta Pakuan, August 2022</p>
+                                <p class="cert-short-desc">Second place achievement in Business Simulation Competition X PDAM Tirta Pakuan, demonstrating excellence in business strategy and decision-making.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Business Strategy</span>
+                                    <span class="project-tag">Competition</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card certification-card">
+                            <div class="cert-image clickable-cert" data-img="assets/img/great-learning.png">
+                                <img src="assets/img/great-learning.png" alt="Great Learning Logo" loading="lazy">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Introduction to Ethical Hacking</h3>
+                                <p class="project-description">Great Learning Academy, August 2024</p>
+                                <p class="cert-short-desc">Comprehensive training in ethical hacking principles, security testing methodologies, and cybersecurity best practices.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Cybersecurity</span>
+                                    <span class="project-tag">Ethical Hacking</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:2.5rem;">
+                        <a href="index.html" class="btn enhanced-btn">
+                            <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Certificate Modal -->
+            <div class="cert-modal" id="cert-modal">
+                <span class="cert-modal-close" id="cert-modal-close">&times;</span>
+                <img class="cert-modal-content" id="cert-modal-img" src="" alt="Certificate Zoomed View">
+            </div>
+        </main>
+    </div>
     <script>
-      // Update footer year automatically
-      document.getElementById('footer-year').textContent = new Date().getFullYear();
+    // Certificate image zoom modal
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('cert-modal');
+        const modalImg = document.getElementById('cert-modal-img');
+        const closeBtn = document.getElementById('cert-modal-close');
+        document.querySelectorAll('.clickable-cert').forEach(function(card) {
+            card.addEventListener('click', function() {
+                modal.classList.add('show');
+                setTimeout(()=>{modalImg.style.transform='scale(1.08)';},10);
+                modalImg.src = card.getAttribute('data-img');
+            });
+        });
+        closeBtn.onclick = function() {
+            modalImg.style.transform='scale(0.92)';
+            setTimeout(()=>{
+              modal.classList.remove('show');
+              modalImg.src = '';
+              modalImg.style.transform='scale(1)';
+            },180);
+        };
+        modal.onclick = function(e) {
+            if (e.target === modal) {
+                modalImg.style.transform='scale(0.92)';
+                setTimeout(()=>{
+                  modal.classList.remove('show');
+                  modalImg.src = '';
+                  modalImg.style.transform='scale(1)';
+                },180);
+            }
+        };
+    });
+    // Update footer year automatically
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
