@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-        <style>
+    <style>
         /* Enhanced styles for improved UI */
         body {
             background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 25%, #141414 50%, #0f0f0f 100%);
@@ -19,7 +20,8 @@
             display: flex;
             flex-direction: row;
             min-height: 100vh;
-            margin-left: 320px; /* offset for fixed sidebar */
+            margin-left: 320px;
+            /* offset for fixed sidebar */
         }
 
         .sidebar {
@@ -27,7 +29,7 @@
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #141414 100%);
             color: #fff;
             padding: 40px 24px;
-            box-shadow: 2px 0 24px rgba(0,0,0,0.3);
+            box-shadow: 2px 0 24px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -55,7 +57,7 @@
             background: url('/assets/img/avatar.png') center center / cover no-repeat;
             margin-bottom: 18px;
             border: 3px solid #333333;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
 
         .name {
@@ -219,20 +221,23 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Show 3 cards per row on desktop */
+            grid-template-columns: repeat(3, 1fr);
+            /* Show 3 cards per row on desktop */
             gap: 30px;
             padding: 0 20px;
         }
 
         @media (max-width: 1100px) {
             .projects-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 cards per row on medium screens */
             }
         }
 
         @media (max-width: 700px) {
             .projects-grid {
-                grid-template-columns: 1fr; /* 1 card per row on small screens */
+                grid-template-columns: 1fr;
+                /* 1 card per row on small screens */
             }
         }
 
@@ -467,7 +472,9 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         /* Responsive improvements */
@@ -476,11 +483,11 @@
                 flex-direction: column;
                 align-items: stretch;
             }
-            
+
             .search-container {
                 max-width: none;
             }
-            
+
             .filter-buttons {
                 justify-content: center;
             }
@@ -492,11 +499,12 @@
                 width: 100%;
                 height: auto;
                 border-radius: 0 0 32px 32px;
-                box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
                 flex-direction: row;
                 justify-content: center;
                 padding: 24px 8px;
             }
+
             .container {
                 margin-left: 0;
                 flex-direction: column;
@@ -507,11 +515,11 @@
             .projects-header h1 {
                 font-size: 2.5rem;
             }
-            
+
             .projects-header p {
                 font-size: 1.1rem;
             }
-            
+
             .enhanced-project-content,
             .project-content {
                 padding: 20px;
@@ -522,22 +530,24 @@
             .projects-header {
                 padding: 40px 20px;
             }
-            
+
             .projects-header h1 {
                 font-size: 2rem;
             }
-            
+
             .filter-buttons {
                 gap: 8px;
             }
-            
+
             .filter-btn {
                 padding: 8px 16px;
                 font-size: 13px;
             }
+
             .sidebar {
                 padding: 16px 2px;
             }
+
             .profile-photo {
                 width: 70px;
                 height: 70px;
@@ -545,6 +555,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
@@ -569,174 +580,225 @@
                 <div class="info-item">
                     <span class="info-label">LinkedIn</span>
                     <span class="info-value">
-                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
+                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank"
+                            rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
                     </span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">GitHub</span>
                     <span class="info-value">
-                        <a href="https://github.com/awiones" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Awiones</a>
+                        <a href="https://github.com/awiones" target="_blank" rel="noopener"
+                            style="color:inherit;text-decoration:underline;">Awiones</a>
                     </span>
                 </div>
             </div>
         </div>
         <main>
-        <section id="all-projects">
-            <div class="section">
-                <div class="projects-header">
-                    <h1>All Projects</h1>
-                    <p>Explore my complete collection of projects, showcasing various technologies and creative solutions.</p>
+            <section id="all-projects">
+                <div class="section">
+                    <div class="projects-header">
+                        <h1>All Projects</h1>
+                        <p>Explore my complete collection of projects, showcasing various technologies and creative
+                            solutions.</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/NEScan" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/NEScan/blob/main/assets/img/logo1.jpg?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">NEScan</h3>
+                                <p class="project-description">A fast and reliable network scanning tool for identifying
+                                    devices, open ports, and potential vulnerabilities.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Network Security</span>
+                                    <span class="tech-tag">Port Scanning</span>
+                                    <span class="tech-tag">Vulnerability Detection</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/TentroLink" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/TentroLink/blob/main/assets/images/_Qbi9yCfTcG023xENbqkmA.jpg?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">TentroLink</h3>
+                                <p class="project-description">Network stress testing and security assessment toolkit
+                                    for authorized penetration testing. Evaluate infrastructure resilience with
+                                    customizable multi-protocol testing capabilities and comprehensive analytics.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Security Testing</span>
+                                    <span class="tech-tag">Network Analysis</span>
+                                    <span class="tech-tag">Penetration Testing</span>
+                                    <span class="tech-tag">Analytics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/RemotelyPy" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/RemotelyPy/blob/main/logo.jpeg?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">RemotelyPy</h3>
+                                <p class="project-description">A secure Python-based remote management system for
+                                    controlling multiple VPS instances through a central controller with SSL encryption
+                                    and interactive CLI.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">VPS Management</span>
+                                    <span class="tech-tag">SSL Encryption</span>
+                                    <span class="tech-tag">CLI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/Enchantment-Overload" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/Enchantment-Overload/blob/main/src/main/resources/assets/enchantmentoverload/images/logo.png?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">Enchantment Overload</h3>
+                                <p class="project-description">Enchantment Overload adds a wide range of enchantments to
+                                    Minecraft, making survival gameplay more exciting and efficient. Discover new ways
+                                    to enhance your tools, weapons, and armor.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Minecraft</span>
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Modding</span>
+                                    <span class="tech-tag">Game Enhancement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/MercuriesOST" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/MercuriesOST/blob/main/public/assets/img/mercuries-logo.jpg?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">MercuriesOST</h3>
+                                <p class="project-description">A fast and efficient OSINT tool for gathering, analyzing,
+                                    and visualizing open-source data. Built for researchers, investigators, and
+                                    cybersecurity professionals.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">OSINT</span>
+                                    <span class="tech-tag">Cybersecurity</span>
+                                    <span class="tech-tag">Data Analysis</span>
+                                    <span class="tech-tag">Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/HemAndIvy" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/HemAndIvy/blob/main/docs/screenshots/home.PNG?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">HemAndIvy</h3>
+                                <p class="project-description">A modern, robust platform for managing and showcasing
+                                    auctions, products, and collections with a focus on user experience and reliability.
+                                    An auction/bid website.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Auction</span>
+                                    <span class="tech-tag">Web Platform</span>
+                                    <span class="tech-tag">User Experience</span>
+                                    <span class="tech-tag">Product Management</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/ResourceToggle" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://camo.githubusercontent.com/e3911d606cb43318599e1185a45303a648d00fd3a91abf7550cb6a071ebc3338/68747470733a2f2f6d656469612e666f72676563646e2e6e65742f6174746163686d656e74732f6465736372697074696f6e2f313234323836342f6465736372697074696f6e5f34356132353363332d646635382d343833322d383332342d3439333264336336316162332e706e67') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">Resource Toggle</h3>
+                                <p class="project-description">Resource Toggle is a lightweight, client-side mod that
+                                    lets you instantly switch resource packs with a simple keypress - no more digging
+                                    through Minecraft's settings menu!</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Minecraft</span>
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Modding</span>
+                                    <span class="tech-tag">Resource Packs</span>
+                                    <span class="tech-tag">Client-side</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://github.com/awiones/Titan-O-" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/Titan-O-/blob/main/images/logos.jpg?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">Titan 'O'</h3>
+                                <p class="project-description">Titan 'O' is a web-based platform that lets you run
+                                    Ollama AI models offline on your local machine.<br>It aims to provide an experience
+                                    similar to OpenAI web chat, but fully local and private.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">AI</span>
+                                    <span class="tech-tag">Ollama</span>
+                                    <span class="tech-tag">Web Platform</span>
+                                    <span class="tech-tag">Offline</span>
+                                    <span class="tech-tag">Chat UI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <a href="https://awiones.github.io/rasi-teller/" target="_blank" rel="noopener"
+                                style="display:block;">
+                                <div class="project-image"
+                                    style="height:200px; background: url('https://github.com/awiones/rasi-teller/blob/main/logo.webp?raw=true') center center / cover no-repeat;">
+                                </div>
+                            </a>
+                            <div class="project-content">
+                                <h3 class="project-title">Rasi Teller <span style="font-size:1em;">🌙✨</span></h3>
+                                <p class="project-description">Rasi Teller is an interactive astrology-inspired web
+                                    application designed to deliver fortunes and celestial insights. Powered by a modern
+                                    design and user-friendly interface, this app showcases a starry theme and smooth
+                                    user interactions.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Astrology</span>
+                                    <span class="tech-tag">Web App</span>
+                                    <span class="tech-tag">Interactive</span>
+                                    <span class="tech-tag">Modern UI</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:center; margin-top:2rem;">
+                        <a href="index.html" class="btn"
+                            style="display:inline-block; min-width:140px; padding:12px 32px; background:linear-gradient(135deg,#232323,#181818); color:#fff; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px #0002; transition:background 0.2s;">Back
+                            to Portfolio</a>
+                    </div>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/NEScan" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/NEScan/blob/main/assets/img/logo1.jpg?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">NEScan</h3>
-                            <p class="project-description">A fast and reliable network scanning tool for identifying devices, open ports, and potential vulnerabilities.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Network Security</span>
-                                <span class="tech-tag">Port Scanning</span>
-                                <span class="tech-tag">Vulnerability Detection</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/TentroLink" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/TentroLink/blob/main/assets/images/_Qbi9yCfTcG023xENbqkmA.jpg?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">TentroLink</h3>
-                            <p class="project-description">Network stress testing and security assessment toolkit for authorized penetration testing. Evaluate infrastructure resilience with customizable multi-protocol testing capabilities and comprehensive analytics.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Security Testing</span>
-                                <span class="tech-tag">Network Analysis</span>
-                                <span class="tech-tag">Penetration Testing</span>
-                                <span class="tech-tag">Analytics</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/RemotelyPy" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/RemotelyPy/blob/main/logo.jpeg?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">RemotelyPy</h3>
-                            <p class="project-description">A secure Python-based remote management system for controlling multiple VPS instances through a central controller with SSL encryption and interactive CLI.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">VPS Management</span>
-                                <span class="tech-tag">SSL Encryption</span>
-                                <span class="tech-tag">CLI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/Enchantment-Overload" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/Enchantment-Overload/blob/main/src/main/resources/assets/enchantmentoverload/images/logo.png?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">Enchantment Overload</h3>
-                            <p class="project-description">Enchantment Overload adds a wide range of enchantments to Minecraft, making survival gameplay more exciting and efficient. Discover new ways to enhance your tools, weapons, and armor.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Minecraft</span>
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Modding</span>
-                                <span class="tech-tag">Game Enhancement</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/MercuriesOST" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/MercuriesOST/blob/main/public/assets/img/mercuries-logo.jpg?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">MercuriesOST</h3>
-                            <p class="project-description">A fast and efficient OSINT tool for gathering, analyzing, and visualizing open-source data. Built for researchers, investigators, and cybersecurity professionals.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">OSINT</span>
-                                <span class="tech-tag">Cybersecurity</span>
-                                <span class="tech-tag">Data Analysis</span>
-                                <span class="tech-tag">Visualization</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/HemAndIvy" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/HemAndIvy/blob/main/docs/screenshots/home.PNG?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">HemAndIvy</h3>
-                            <p class="project-description">A modern, robust platform for managing and showcasing auctions, products, and collections with a focus on user experience and reliability. An auction/bid website.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Auction</span>
-                                <span class="tech-tag">Web Platform</span>
-                                <span class="tech-tag">User Experience</span>
-                                <span class="tech-tag">Product Management</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/ResourceToggle" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://camo.githubusercontent.com/e3911d606cb43318599e1185a45303a648d00fd3a91abf7550cb6a071ebc3338/68747470733a2f2f6d656469612e666f72676563646e2e6e65742f6174746163686d656e74732f6465736372697074696f6e2f313234323836342f6465736372697074696f6e5f34356132353363332d646635382d343833322d383332342d3439333264336336316162332e706e67') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">Resource Toggle</h3>
-                            <p class="project-description">Resource Toggle is a lightweight, client-side mod that lets you instantly switch resource packs with a simple keypress - no more digging through Minecraft's settings menu!</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Minecraft</span>
-                                <span class="tech-tag">Java</span>
-                                <span class="tech-tag">Modding</span>
-                                <span class="tech-tag">Resource Packs</span>
-                                <span class="tech-tag">Client-side</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://github.com/awiones/Titan-O-" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/Titan-O-/blob/main/images/logos.jpg?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">Titan 'O'</h3>
-                            <p class="project-description">Titan 'O' is a web-based platform that lets you run Ollama AI models offline on your local machine.<br>It aims to provide an experience similar to OpenAI web chat, but fully local and private.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">AI</span>
-                                <span class="tech-tag">Ollama</span>
-                                <span class="tech-tag">Web Platform</span>
-                                <span class="tech-tag">Offline</span>
-                                <span class="tech-tag">Chat UI</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <a href="https://awiones.github.io/rasi-teller/" target="_blank" rel="noopener" style="display:block;">
-                            <div class="project-image" style="height:200px; background: url('https://github.com/awiones/rasi-teller/blob/main/logo.webp?raw=true') center center / cover no-repeat;"></div>
-                        </a>
-                        <div class="project-content">
-                            <h3 class="project-title">Rasi Teller <span style="font-size:1em;">🌙✨</span></h3>
-                            <p class="project-description">Rasi Teller is an interactive astrology-inspired web application designed to deliver fortunes and celestial insights. Powered by a modern design and user-friendly interface, this app showcases a starry theme and smooth user interactions.</p>
-                            <div class="project-tech">
-                                <span class="tech-tag">Astrology</span>
-                                <span class="tech-tag">Web App</span>
-                                <span class="tech-tag">Interactive</span>
-                                <span class="tech-tag">Modern UI</span>
-                                <span class="tech-tag">JavaScript</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align:center; margin-top:2rem;">
-                    <a href="index.html" class="btn" style="display:inline-block; min-width:140px; padding:12px 32px; background:linear-gradient(135deg,#232323,#181818); color:#fff; border-radius:8px; font-weight:600; text-decoration:none; box-shadow:0 2px 8px #0002; transition:background 0.2s;">Back to Portfolio</a>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
     </div>
     <script>
-      // Update footer year automatically
-      document.getElementById('footer-year').textContent = new Date().getFullYear();
+        // Update footer year automatically
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>

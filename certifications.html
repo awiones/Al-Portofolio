@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,15 +13,20 @@
             display: none;
             position: fixed;
             z-index: 9999;
-            left: 0; top: 0; width: 100vw; height: 100vh;
-            background: rgba(20,20,20,0.92);
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(20, 20, 20, 0.92);
             align-items: center;
             justify-content: center;
             flex-direction: column;
         }
+
         .cert-modal.show {
             display: flex;
         }
+
         .cert-modal-content {
             max-width: 90vw;
             max-height: 80vh;
@@ -29,8 +35,9 @@
             background: #232323;
             object-fit: contain;
             margin-bottom: 18px;
-            transition: transform 0.18s cubic-bezier(.4,2,.6,1);
+            transition: transform 0.18s cubic-bezier(.4, 2, .6, 1);
         }
+
         .cert-modal-close {
             color: #fff;
             position: absolute;
@@ -42,23 +49,26 @@
             z-index: 10001;
             text-shadow: 0 2px 8px #000a;
             transition: color 0.2s;
-            background:rgba(30,30,30,0.7);
-            border-radius:50%;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 50%;
             width: 48px;
             height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .cert-modal-close:hover {
             color: #ff5252;
-            background:rgba(30,30,30,0.95);
+            background: rgba(30, 30, 30, 0.95);
         }
+
         @media (max-width: 600px) {
             .cert-modal-content {
                 max-width: 98vw;
                 max-height: 60vh;
             }
+
             .cert-modal-close {
                 top: 12px;
                 right: 18px;
@@ -67,54 +77,63 @@
                 height: 36px;
             }
         }
+
         .enhanced-header {
-            text-align:center;
-            padding:60px 20px 40px 20px;
-            background:linear-gradient(135deg,rgba(10,10,10,0.8) 0%,rgba(26,26,26,0.6) 50%,rgba(20,20,20,0.8) 100%);
-            border-radius:24px;
-            margin-bottom:40px;
-            border:1px solid rgba(255,255,255,0.05);
-            backdrop-filter:blur(10px);
-            box-shadow:0 4px 32px rgba(30,30,30,0.12);
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8) 0%, rgba(26, 26, 26, 0.6) 50%, rgba(20, 20, 20, 0.8) 100%);
+            border-radius: 24px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 32px rgba(30, 30, 30, 0.12);
         }
+
         .certifications-title {
-            font-size:3.5rem;
-            font-weight:800;
-            margin-bottom:16px;
-            background:linear-gradient(135deg,#ffffff 0%,#cccccc 25%,#aaaaaa 50%,#888888 75%,#666666 100%);
-            -webkit-background-clip:text;
-            background-clip:text;
-            -webkit-text-fill-color:transparent;
-            text-shadow:0 4px 12px rgba(255,255,255,0.1);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #cccccc 25%, #aaaaaa 50%, #888888 75%, #666666 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
         }
+
         .certifications-subtitle {
-            font-size:1.25rem;
-            color:#888888;
-            max-width:600px;
-            margin:0 auto;
-            line-height:1.6;
+            font-size: 1.25rem;
+            color: #888888;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
+
         .cert-image.clickable-cert {
             cursor: zoom-in;
             transition: box-shadow 0.2s, transform 0.2s;
             border-radius: 20px 20px 0 0;
         }
+
         .cert-image.clickable-cert:hover {
             box-shadow: 0 8px 32px #0006;
             transform: scale(1.03);
         }
+
         .cert-modal {
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.25s;
         }
+
         .cert-modal.show {
             opacity: 1;
             pointer-events: auto;
         }
+
         .cert-modal-content {
-            transition: transform 0.18s cubic-bezier(.4,2,.6,1);
+            transition: transform 0.18s cubic-bezier(.4, 2, .6, 1);
         }
+
         .cert-modal-close {
             color: #fff;
             position: absolute;
@@ -126,50 +145,56 @@
             z-index: 10001;
             text-shadow: 0 2px 8px #000a;
             transition: color 0.2s;
-            background:rgba(30,30,30,0.7);
-            border-radius:50%;
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 50%;
             width: 48px;
             height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .cert-modal-close:hover {
             color: #ff5252;
-            background:rgba(30,30,30,0.95);
+            background: rgba(30, 30, 30, 0.95);
         }
+
         .enhanced-btn {
-            display:inline-block;
-            min-width:140px;
-            padding:12px 32px;
-            background:linear-gradient(135deg,#232323,#181818);
-            color:#fff;
-            border-radius:10px;
-            font-weight:700;
-            text-decoration:none;
-            box-shadow:0 2px 12px #0003;
-            transition:background 0.2s, box-shadow 0.2s, transform 0.2s;
-            font-size:1.1rem;
+            display: inline-block;
+            min-width: 140px;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #232323, #181818);
+            color: #fff;
+            border-radius: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 2px 12px #0003;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            font-size: 1.1rem;
             border: none;
         }
+
         .enhanced-btn:hover {
-            background:linear-gradient(135deg,#181818,#232323);
-            color:#fff;
-            box-shadow:0 6px 24px #0005;
+            background: linear-gradient(135deg, #181818, #232323);
+            color: #fff;
+            box-shadow: 0 6px 24px #0005;
             transform: translateY(-2px) scale(1.04);
         }
+
         .container {
             display: flex;
             flex-direction: row;
             min-height: 100vh;
-            margin-left: 320px; /* offset for fixed sidebar */
+            margin-left: 320px;
+            /* offset for fixed sidebar */
         }
+
         .sidebar {
             width: 320px;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #141414 100%);
             color: #fff;
             padding: 40px 24px;
-            box-shadow: 2px 0 24px rgba(0,0,0,0.3);
+            box-shadow: 2px 0 24px rgba(0, 0, 0, 0.3);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -182,27 +207,31 @@
             overflow-y: auto;
             border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         @media (max-width: 900px) {
             .sidebar {
                 position: static;
                 width: 100%;
                 height: auto;
                 border-radius: 0 0 32px 32px;
-                box-shadow: 0 2px 24px rgba(0,0,0,0.3);
+                box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
                 flex-direction: row;
                 justify-content: center;
                 padding: 24px 8px;
             }
+
             .container {
                 margin-left: 0;
                 flex-direction: column;
             }
         }
+
         @media (max-width: 600px) {
             .cert-modal-content {
                 max-width: 98vw;
                 max-height: 60vh;
             }
+
             .cert-modal-close {
                 top: 12px;
                 right: 18px;
@@ -210,12 +239,14 @@
                 width: 36px;
                 height: 36px;
             }
+
             .certifications-title {
-                font-size:2.1rem;
+                font-size: 2.1rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="sidebar">
@@ -240,13 +271,15 @@
                 <div class="info-item">
                     <span class="info-label">LinkedIn</span>
                     <span class="info-value">
-                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
+                        <a href="https://www.linkedin.com/in/al-ghozali-ramadhan-73966a283" target="_blank"
+                            rel="noopener" style="color:inherit;text-decoration:underline;">Al Ghozali</a>
                     </span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">GitHub</span>
                     <span class="info-value">
-                        <a href="https://github.com/awiones" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Awiones</a>
+                        <a href="https://github.com/awiones" target="_blank" rel="noopener"
+                            style="color:inherit;text-decoration:underline;">Awiones</a>
                     </span>
                 </div>
             </div>
@@ -256,7 +289,8 @@
                 <div class="section">
                     <div class="projects-header enhanced-header">
                         <h1 class="certifications-title">Certifications</h1>
-                        <p class="certifications-subtitle">Explore my collection of certifications, highlighting achievements and expertise across various fields and disciplines.</p>
+                        <p class="certifications-subtitle">Explore my collection of certifications, highlighting
+                            achievements and expertise across various fields and disciplines.</p>
                     </div>
                     <div class="projects-grid" style="margin-bottom:0;">
                         <div class="project-card certification-card">
@@ -267,7 +301,7 @@
                                 <h3 class="project-title">TOEFL ITP</h3>
                                 <p class="project-description">Bahasa Inggris Net, Aug 2024</p>
                                 <p class="cert-short-desc">Overall Score: 557<br>
-                                Listening: 52 | Structure: 61 | Reading: 54</p>
+                                    Listening: 52 | Structure: 61 | Reading: 54</p>
                                 <div class="project-tags">
                                     <span class="project-tag">English Proficiency</span>
                                     <span class="project-tag">International Standard</span>
@@ -280,12 +314,15 @@
                         </div>
                         <div class="project-card certification-card">
                             <div class="cert-image clickable-cert" data-img="assets/img/business-sim-logo.png">
-                                <img src="assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo" loading="lazy">
+                                <img src="assets/img/business-sim-logo.png" alt="Business Simulation Competition Logo"
+                                    loading="lazy">
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">Business Simulation Competition Runner-up</h3>
                                 <p class="project-description">PDAM Tirta Pakuan, August 2022</p>
-                                <p class="cert-short-desc">Second place achievement in Business Simulation Competition X PDAM Tirta Pakuan, demonstrating excellence in business strategy and decision-making.</p>
+                                <p class="cert-short-desc">Second place achievement in Business Simulation Competition X
+                                    PDAM Tirta Pakuan, demonstrating excellence in business strategy and
+                                    decision-making.</p>
                                 <div class="project-tags">
                                     <span class="project-tag">Business Strategy</span>
                                     <span class="project-tag">Competition</span>
@@ -299,7 +336,8 @@
                             <div class="project-content">
                                 <h3 class="project-title">Introduction to Ethical Hacking</h3>
                                 <p class="project-description">Great Learning Academy, August 2024</p>
-                                <p class="cert-short-desc">Comprehensive training in ethical hacking principles, security testing methodologies, and cybersecurity best practices.</p>
+                                <p class="cert-short-desc">Comprehensive training in ethical hacking principles,
+                                    security testing methodologies, and cybersecurity best practices.</p>
                                 <div class="project-tags">
                                     <span class="project-tag">Cybersecurity</span>
                                     <span class="project-tag">Ethical Hacking</span>
@@ -322,39 +360,40 @@
         </main>
     </div>
     <script>
-    // Certificate image zoom modal
-    document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('cert-modal');
-        const modalImg = document.getElementById('cert-modal-img');
-        const closeBtn = document.getElementById('cert-modal-close');
-        document.querySelectorAll('.clickable-cert').forEach(function(card) {
-            card.addEventListener('click', function() {
-                modal.classList.add('show');
-                setTimeout(()=>{modalImg.style.transform='scale(1.08)';},10);
-                modalImg.src = card.getAttribute('data-img');
+        // Certificate image zoom modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('cert-modal');
+            const modalImg = document.getElementById('cert-modal-img');
+            const closeBtn = document.getElementById('cert-modal-close');
+            document.querySelectorAll('.clickable-cert').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    modal.classList.add('show');
+                    setTimeout(() => { modalImg.style.transform = 'scale(1.08)'; }, 10);
+                    modalImg.src = card.getAttribute('data-img');
+                });
             });
+            closeBtn.onclick = function () {
+                modalImg.style.transform = 'scale(0.92)';
+                setTimeout(() => {
+                    modal.classList.remove('show');
+                    modalImg.src = '';
+                    modalImg.style.transform = 'scale(1)';
+                }, 180);
+            };
+            modal.onclick = function (e) {
+                if (e.target === modal) {
+                    modalImg.style.transform = 'scale(0.92)';
+                    setTimeout(() => {
+                        modal.classList.remove('show');
+                        modalImg.src = '';
+                        modalImg.style.transform = 'scale(1)';
+                    }, 180);
+                }
+            };
         });
-        closeBtn.onclick = function() {
-            modalImg.style.transform='scale(0.92)';
-            setTimeout(()=>{
-              modal.classList.remove('show');
-              modalImg.src = '';
-              modalImg.style.transform='scale(1)';
-            },180);
-        };
-        modal.onclick = function(e) {
-            if (e.target === modal) {
-                modalImg.style.transform='scale(0.92)';
-                setTimeout(()=>{
-                  modal.classList.remove('show');
-                  modalImg.src = '';
-                  modalImg.style.transform='scale(1)';
-                },180);
-            }
-        };
-    });
-    // Update footer year automatically
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
+        // Update footer year automatically
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
